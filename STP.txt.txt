@@ -1,0 +1,39 @@
+問1
+ルートブリッジ　→　Switch3　、ブリッジプライオリティが一番低いため
+
+
+問2
+ショートパスコスト
+Switch1ーSwitch2　→　19
+Switch2－Switch4　→　100
+Switch3ーSwitch4　→　100
+Switch1－Switch3　→　100
+
+
+ルートコスト
+Switch1－Switch3　　　　　　　　　　→　100　○
+Switch1－Switch2ーSwitch4ーSwitch3　→　19＋100＋100＝219
+
+Switch2ーSwitch1－Switch3　　　　　 →　19＋100＝119　○
+Switch2ーSwitch4－Switch3　　　　　 →　100＋100＝200
+
+Switch4ーSwitch3　　　　　　　　　　→　100　○
+Switch4ーSwitch2－Switch1－Switch3　→　100＋19＋100＝219
+
+
+ポートの役割
+Switch1
+F0/1　→　DP　、Switch2のF0/1がRPのため
+F0/2　→　RP　、最小ルートパスコストのため
+
+Switch2
+F0/1　→　RP　、最小ルートパスコストのため
+F0/2　→　BP　、RPでもDPでもないため
+
+Switch3
+E0/1　→　DP　、ルートブリッジのため
+E0/2　→　DP　、ルートブリッジのため
+
+Switch4
+E0/1　→　DP　、役割がない対向ポートのうち、ブリッジプライオリティが低いため
+E0/2　→　RP　、最小ルートパスコストのため
